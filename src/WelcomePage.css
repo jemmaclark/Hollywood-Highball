@@ -1,0 +1,21 @@
+.welcome-container {
+  background-image: url(src/images/Hollywood-Highball.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-content {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 35px;
+  max-width: 400px;
+  margin-left: 720px;
+  margin-top: 500px;
+  color: #cb6ce6;
+}
