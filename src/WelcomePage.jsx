@@ -4,9 +4,13 @@ import "./WelcomePage.css";
 
 function WelcomePage() {
   return (
-    <div className="welcome-container">
-      <div className="welcome-content">
-        <Link to="/movies">Get Started</Link>
+    <div class="container">
+      <div class="header"></div>
+      <div class="footer"></div>
+      <div class="main-content">
+        <div className="button">
+          <Link to="/movies">Get Started</Link>
+        </div>
       </div>
     </div>
   );
