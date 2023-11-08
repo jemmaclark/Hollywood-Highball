@@ -7,13 +7,11 @@ function Movies() {
     { name: "Energetic", genre: "Action" },
     { name: "Wanderlust", genre: "Adventure" },
     { name: "Thrilled", genre: "Adventure" },
-    { name: "Childlike", genre: "Animation" },
+    { name: "Silly", genre: "Animation" },
     { name: "Whimsy", genre: "Animation" },
     { name: "Cheerful", genre: "Animation" },
-    { name: "Silly", genre: "Comedy" },
     { name: "Happy", genre: "Comedy" },
     { name: "Suspense", genre: "Crime" },
-    { name: "Tense", genre: "Crime" },
     { name: "Informative", genre: "Documentary" },
     { name: "Thoughtful", genre: "Documentary" },
     { name: "Emotional", genre: "Drama" },
@@ -91,37 +89,39 @@ function Movies() {
 
   return (
     <div className="container">
-      <div className="header"></div>
-      <div className="footer"></div>
-      <div className="left-content">
-        {randomMovie && (
-          <div className="movie-display">
-            <h2>Random Movie</h2>
-            <h3>{randomMovie.title}</h3>
-            <img
-              src={`https://image.tmdb.org/t/p/w185${randomMovie.poster_path}`}
-              alt={randomMovie.title}
-            />
+      <div className="header">Header Content</div>
+      <div className="main-content">
+        <div className="left-section"></div>
+        <div className="right-section">
+          <h1>Movie Mood</h1>
+          <div className="mood-boxes">
+            {moods.map((mood, index) => (
+              <label key={index}>
+                <input
+                  type="checkbox"
+                  value={mood.name}
+                  checked={selectedMood.includes(mood.name)}
+                  onChange={(e) => handleMoodChange(e, mood.name)}
+                />
+                {mood.name}
+              </label>
+            ))}
           </div>
-        )}
-      </div>
-      <div className="right-content">
-        <h1>Movie Mood</h1>
-        <div className="mood-boxes">
-          {moods.map((mood, index) => (
-            <label key={index}>
-              <input
-                type="checkbox"
-                value={mood.name}
-                checked={selectedMood.includes(mood.name)}
-                onChange={(e) => handleMoodChange(e, mood.name)}
+          <button onClick={fetchRandomMovie}>Get Movie</button>
+          {randomMovie && (
+            <div className="movie-display">
+              <h2>Random Movie</h2>
+              <h3>{randomMovie.title}</h3>
+              <img
+                src={`https://image.tmdb.org/t/p/w185${randomMovie.poster_path}`}
+                alt={randomMovie.title}
               />
-              {mood.name}
-            </label>
-          ))}
+            </div>
+          )}
         </div>
-        <button onClick={fetchRandomMovie}>Get Movie</button>
       </div>
+
+      <div className="footer"></div>
     </div>
   );
 }

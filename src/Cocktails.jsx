@@ -24,7 +24,7 @@ const availableCocktails = [
   // Add any other liquors here
 ];
 
-function CocktailApp() {
+function Cocktails() {
   const [selectedAlcohol, setSelectedAlcohol] = useState("");
   const [randomCocktail, setRandomCocktail] = useState(null);
 
@@ -66,7 +66,7 @@ function CocktailApp() {
   function getIngredientsList(cocktail) {
     const ingredients = [];
 
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 50; i++) {
       const ingredient = cocktail[`strIngredient${i}`];
       const measure = cocktail[`strMeasure${i}`];
 
@@ -122,4 +122,4 @@ function CocktailApp() {
   );
 }
 
-export default CocktailApp;
+export default Cocktails;
