@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./Cocktails.css";
+import { Link } from "react-router-dom";
 
 const availableCocktails = [
   "Vodka",
@@ -81,43 +83,54 @@ function Cocktails() {
   }
 
   return (
-    <div>
-      <h1>Cocktail App</h1>
-      <div>
-        <label>Select a Cocktail or Liquor:</label>
-        {availableCocktails.map((cocktail) => (
-          <label key={cocktail}>
-            <input
-              type="radio"
-              name="selectedAlcohol"
-              value={cocktail}
-              checked={selectedAlcohol === cocktail}
-              onChange={() => setSelectedAlcohol(cocktail)}
-            />
-            {cocktail}
-          </label>
-        ))}
-      </div>
-
-      <button onClick={handleFindCocktail}>Find Cocktail</button>
-
-      {randomCocktail && (
-        <div>
-          <h2>Random Cocktail:</h2>
-          <h3>Name: {randomCocktail.strDrink}</h3>
-          <h4>Ingredients:</h4>
-          <ul>
-            {getIngredientsList(randomCocktail).map((ingredient, i) => (
-              <li key={i}>{ingredient}</li>
+    <div className="container">
+      <div className="header">Header Content</div>
+      <div className="main-content">
+        <span className="left-section"></span>
+        <span className="right-section">
+          <h1>SELECT YOUR ALCOHOL OF CHOICE</h1>
+          <div>
+            <label>Select One:</label>
+            {availableCocktails.map((cocktail) => (
+              <label key={cocktail}>
+                <input
+                  type="radio"
+                  name="selectedAlcohol"
+                  value={cocktail}
+                  checked={selectedAlcohol === cocktail}
+                  onChange={() => setSelectedAlcohol(cocktail)}
+                />
+                {cocktail}
+              </label>
             ))}
-          </ul>
-          <p>Instructions: {randomCocktail.strInstructions}</p>
-          <img
-            src={randomCocktail.strDrinkThumb}
-            alt={randomCocktail.strDrink}
-          />
-        </div>
-      )}
+          </div>
+          <button className="cocktail-button" onClick={handleFindCocktail}>
+            Find Cocktail
+          </button>
+          {randomCocktail && (
+            <div className={`cocktail-display ${randomCocktail ? "show" : ""}`}>
+              <h2>{randomCocktail.strDrink}</h2>
+              <h4>Ingredients:</h4>
+              <ul>
+                {getIngredientsList(randomCocktail).map((ingredient, i) => (
+                  <li key={i}>{ingredient}</li>
+                ))}
+              </ul>
+              <p>Instructions: {randomCocktail.strInstructions}</p>
+              <img
+                src={randomCocktail.strDrinkThumb}
+                alt={randomCocktail.strDrink}
+              />
+            </div>
+          )}
+        </span>
+      </div>
+      <Link
+        to="/movies"
+        className={randomCocktail ? "cocktail-link show" : "cocktail-link"}
+      >
+        <button className="cocktail-button">Get Movie</button>
+      </Link>
     </div>
   );
 }

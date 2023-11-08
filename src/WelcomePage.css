@@ -43,29 +43,29 @@ body {
   text-align: center;
 }
 
-.right-section {
-  padding: 20px;
-  text-align: center;
-}
-
-.sticky-footer {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px 0;
-  color: #cb6ce6;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  text-align: right;
-}
-
 .get-started-link {
   text-decoration: none;
-  color: #cb6ce6;
+  color: white;
+  background-color: #cb6ce6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.get-started-link:hover {
+  background-color: #a649c7;
 }
 .text {
-  padding: 30%;
+  padding-left: 30%;
+  padding-top: 30%;
+  padding-right: 30%;
+  padding-bottom: 0;
   text-align: center;
   font-size: 30px;
   padding-right: 200px;

@@ -1,38 +1,39 @@
 import React, { useState } from "react";
 import "./Movies.css";
+import { Link } from "react-router-dom";
 
 function Movies() {
   const [moods, setMoods] = useState([
-    { name: "Excited", genre: "Action" },
-    { name: "Energetic", genre: "Action" },
-    { name: "Wanderlust", genre: "Adventure" },
-    { name: "Thrilled", genre: "Adventure" },
-    { name: "Silly", genre: "Animation" },
-    { name: "Whimsy", genre: "Animation" },
-    { name: "Cheerful", genre: "Animation" },
-    { name: "Happy", genre: "Comedy" },
-    { name: "Suspense", genre: "Crime" },
-    { name: "Informative", genre: "Documentary" },
-    { name: "Thoughtful", genre: "Documentary" },
-    { name: "Emotional", genre: "Drama" },
-    { name: "Serious", genre: "Drama" },
-    { name: "Introspective", genre: "Drama" },
-    { name: "Heartwarming", genre: "Family" },
-    { name: "Wholesome", genre: "Family" },
-    { name: "Nurturing", genre: "Family" },
-    { name: "Wonder", genre: "Fantasy" },
-    { name: "Curious", genre: "Fantasy" },
-    { name: "Escaping Reality", genre: "Fantasy" },
-    { name: "Reflective", genre: "History" },
-    { name: "Fearful", genre: "Horror" },
-    { name: "Rhythmic", genre: "Music" },
-    { name: "Intrigued", genre: "Mystery" },
-    { name: "Love", genre: "Romance" },
-    { name: "Futuristic", genre: "Science Fiction" },
-    { name: "Relaxed", genre: "TV Movie" },
-    { name: "Tense", genre: "Thriller" },
-    { name: "Intense", genre: "War" },
-    { name: "Adventurous", genre: "Western" },
+    { name: " Excited ", genre: "Action" },
+    { name: " Energetic ", genre: "Action" },
+    { name: " Wanderlust ", genre: "Adventure" },
+    { name: " Thrilled ", genre: "Adventure" },
+    { name: " Silly ", genre: "Animation" },
+    { name: " Whimsy ", genre: "Animation" },
+    { name: " Cheerful ", genre: "Animation" },
+    { name: " Happy ", genre: "Comedy" },
+    { name: " Suspense ", genre: "Crime" },
+    { name: " Informative ", genre: "Documentary" },
+    { name: " Thoughtful ", genre: "Documentary" },
+    { name: " Emotional ", genre: "Drama" },
+    { name: " Serious ", genre: "Drama" },
+    { name: " Introspective ", genre: "Drama" },
+    { name: " Heartwarming ", genre: "Family" },
+    { name: " Wholesome ", genre: "Family" },
+    { name: " Nurturing ", genre: "Family" },
+    { name: " Wonder ", genre: "Fantasy" },
+    { name: " Curious ", genre: "Fantasy" },
+    { name: " Escaping Reality ", genre: "Fantasy" },
+    { name: " Reflective ", genre: "History" },
+    { name: " Fearful ", genre: "Horror" },
+    { name: " Rhythmic ", genre: "Music" },
+    { name: " Intrigued ", genre: "Mystery" },
+    { name: " Love ", genre: "Romance" },
+    { name: " Futuristic ", genre: "Science Fiction" },
+    { name: " Relaxed ", genre: "TV Movie" },
+    { name: " Tense ", genre: "Thriller" },
+    { name: " Intense ", genre: "War" },
+    { name: " Adventurous ", genre: "Western" },
   ]);
   const [selectedMood, setSelectedMood] = useState([]);
   const [randomMovie, setRandomMovie] = useState(null);
@@ -107,9 +108,12 @@ function Movies() {
               </label>
             ))}
           </div>
-          <button onClick={fetchRandomMovie}>Get Movie</button>
+          <button className="cocktail-button" onClick={fetchRandomMovie}>
+            Get Movie
+          </button>
+
           {randomMovie && (
-            <div className="movie-display">
+            <div className={`movie-display ${randomMovie ? "show" : ""}`}>
               <h2>Random Movie</h2>
               <h3>{randomMovie.title}</h3>
               <img
@@ -120,8 +124,12 @@ function Movies() {
           )}
         </div>
       </div>
-
-      <div className="footer"></div>
+      <Link
+        to="/cocktails"
+        className={randomMovie ? "cocktail-link show" : "cocktail-link"}
+      >
+        <button className="cocktail-button">Get Cocktail</button>
+      </Link>
     </div>
   );
 }

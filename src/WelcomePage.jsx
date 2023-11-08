@@ -13,11 +13,11 @@ function WelcomePage() {
             LIGHTS, CAMERA, COCKTAILS! HOLLYWOOD HIGHBALL: WHERE MOVIE MAGIC
             MEETS MIXOLOGY FOR A NIGHT OF CINEMATIC SIPS.
           </div>
+          <Link to="/movies" className="get-started-link">
+            Get Started
+          </Link>
         </div>
       </div>
-      <footer className="sticky-footer">
-        <Link to="/movies">Get Started</Link>
-      </footer>
     </div>
   );
 }
