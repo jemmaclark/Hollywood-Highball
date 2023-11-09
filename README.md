@@ -3,6 +3,7 @@
 ## Overview
 
 Hollywood Highball is an innovative web application designed to elevate your entertainment experience by combining two of life's pleasures: movies and cocktails. This dynamic app allows users to seamlessly integrate their moods, movie preferences, and available alcohol into a delightful and customised evening.
+![Screen Shot 2023-11-10 at 9 02 35 am](https://github.com/jemmaclark/Hollywood-Highball/assets/142560296/71defef3-dd66-40b2-bfbe-a7dc5be58d3d)
 
 ## Table of Contents
 
