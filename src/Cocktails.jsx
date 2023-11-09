@@ -91,6 +91,7 @@ function Cocktails() {
           <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
           <Link to="/cocktails">Cocktails</Link>
+          <Link to="/about">About</Link>
         </nav>
       </header>
       <div className="main-content">

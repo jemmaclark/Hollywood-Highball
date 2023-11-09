@@ -17,6 +17,7 @@ function FinalPage(props) {
           <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
           <Link to="/cocktails">Cocktails</Link>
+          <Link to="/about">About</Link>
         </nav>
       </header>
       <div className="main-content">
@@ -39,7 +40,7 @@ function FinalPage(props) {
           )}
         </div>
         <div className="right-section-movies">
-          <h2>Selected Cocktail</h2>
+          <h1>Selected Cocktail</h1>
           {cocktail && (
             <div>
               <h3>Name: {cocktail.strDrink}</h3>
