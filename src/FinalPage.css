@@ -1,0 +1,26 @@
+.final-page {
+  background-color: black; /* Set the black background */
+  color: white; /* Text color on black background */
+}
+
+.center-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Set the desired image height */
+  margin-top: 40%;
+}
+
+.image-size {
+  width: 150px; /* Set the desired image width */
+  height: auto;
+}
+
+h3 {
+  margin-top: 10%;
+}
+
+h4 {
+  padding: 70px;
+}

@@ -28,7 +28,27 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
-  text-align: center;
+  /* text-align: center; */
+}
+.sticky-header nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px; /* Adjust the spacing between links */
+  padding: 10px;
+}
+
+.sticky-header a {
+  text-decoration: none;
+  color: white;
+  background-color: #cb6ce6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sticky-header a:hover {
+  background-color: #a649c7;
 }
 
 .main-content {
@@ -40,6 +60,13 @@ body {
 
 .left-section {
   padding: 20px;
+  text-align: center;
+}
+
+.right-section {
+  display: inline-block;
+  padding: 20px;
+  margin-right: 150px;
   text-align: center;
 }
 
@@ -63,7 +90,7 @@ body {
 }
 .text {
   padding-left: 30%;
-  padding-top: 30%;
+  padding-top: 15%;
   padding-right: 30%;
   padding-bottom: 0;
   text-align: center;

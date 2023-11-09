@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Cocktails.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const availableCocktails = [
   "Vodka",
@@ -13,7 +13,6 @@ const availableCocktails = [
   "Beer",
   "Wine",
   "Brandy",
-  "Baileys",
   "Absinthe",
   "Champagne",
   "Tequila",
@@ -23,20 +22,23 @@ const availableCocktails = [
   "Ginger Beer",
   "Whiskey",
   "Aperol",
-  // Add any other liquors here
 ];
 
 function Cocktails() {
   const [selectedAlcohol, setSelectedAlcohol] = useState("");
   const [randomCocktail, setRandomCocktail] = useState(null);
+  const location = useLocation();
+  const randomMovie = location.state && location.state.randomMovie;
+  console.log(location);
 
+  // function to fetch cocktail by alcohol
   function handleFindCocktail() {
     if (selectedAlcohol) {
       const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selectedAlcohol}`;
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          //   console.log(data);
 
           const drinks = data.drinks || [];
           if (drinks.length > 0) {
@@ -58,7 +60,7 @@ function Cocktails() {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const cocktailDetails = data.drinks ? data.drinks[0] : null;
         setRandomCocktail(cocktailDetails);
       })
@@ -84,7 +86,13 @@ function Cocktails() {
 
   return (
     <div className="container">
-      <div className="header">Header Content</div>
+      <header className="sticky-header">
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+          <Link to="/cocktails">Cocktails</Link>
+        </nav>
+      </header>
       <div className="main-content">
         <span className="left-section"></span>
         <span className="right-section">
@@ -126,10 +134,15 @@ function Cocktails() {
         </span>
       </div>
       <Link
-        to="/movies"
-        className={randomCocktail ? "cocktail-link show" : "cocktail-link"}
+        state={{ cocktail: randomCocktail, movie: randomMovie }}
+        to={{
+          pathname: "/final",
+        }}
+        className={
+          randomCocktail && randomMovie ? "button-link show" : "button-link"
+        }
       >
-        <button className="cocktail-button">Get Movie</button>
+        Go to Final Page
       </Link>
     </div>
   );

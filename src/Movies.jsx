@@ -90,7 +90,13 @@ function Movies() {
 
   return (
     <div className="container">
-      <div className="header">Header Content</div>
+      <header className="sticky-header">
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+          <Link to="/cocktails">Cocktails</Link>
+        </nav>
+      </header>
       <div className="main-content">
         <div className="left-section"></div>
         <div className="right-section">
@@ -114,8 +120,7 @@ function Movies() {
 
           {randomMovie && (
             <div className={`movie-display ${randomMovie ? "show" : ""}`}>
-              <h2>Random Movie</h2>
-              <h3>{randomMovie.title}</h3>
+              <h2>{randomMovie.title}</h2>
               <img
                 src={`https://image.tmdb.org/t/p/w185${randomMovie.poster_path}`}
                 alt={randomMovie.title}
@@ -125,7 +130,10 @@ function Movies() {
         </div>
       </div>
       <Link
-        to="/cocktails"
+        state={{ randomMovie: randomMovie }}
+        to={{
+          pathname: "/cocktails",
+        }}
         className={randomMovie ? "cocktail-link show" : "cocktail-link"}
       >
         <button className="cocktail-button">Get Cocktail</button>
