@@ -20,7 +20,7 @@ function FinalPage(props) {
         </nav>
       </header>
       <div className="main-content">
-        <div className="left-section">
+        <div className="left-section-final">
           <h1>Selected Movie</h1>
           {movie && (
             <div>
@@ -32,7 +32,7 @@ function FinalPage(props) {
                   className="image-size"
                 />
                 <div className="plot">
-                  <h4>{movie.overview}</h4>
+                  <h4 className="final">{movie.overview}</h4>
                 </div>
               </div>
             </div>

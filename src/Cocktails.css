@@ -19,7 +19,7 @@
 .sticky-header nav {
   display: flex;
   justify-content: flex-start;
-  gap: 10px; /* Adjust the spacing between links */
+  gap: 10px;
   padding: 10px;
 }
 
@@ -47,11 +47,10 @@
   padding-right: 100px;
   margin-right: 150px;
   text-align: center;
-  /* background-color: black; */
 }
 .cocktail-display img {
-  max-width: 200px; /* Adjust the maximum width as needed */
-  max-height: 200px; /* Adjust the maximum height as needed */
+  max-width: 200px;
+  max-height: 200px;
 }
 .button-link {
   background-color: #cb6ce6;
@@ -72,7 +71,6 @@
   display: inline;
 }
 
-/* You can also define the hover styles if needed */
 .button-link:hover {
   background-color: #a649c7;
 }
