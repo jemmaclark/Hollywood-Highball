@@ -1,5 +1,7 @@
 # Hollywood Highball 🍿🍹
 
+[Click here](https://hollywood-highball.surge.sh/) to check it out!
+
 ## Overview
 
 Hollywood Highball is an innovative web application designed to elevate your entertainment experience by combining two of life's pleasures: movies and cocktails. This dynamic app allows users to seamlessly integrate their moods, movie preferences, and available alcohol into a delightful and customised evening.
